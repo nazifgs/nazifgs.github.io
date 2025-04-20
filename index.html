@@ -1,80 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="tr">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nazif Gürkan Şen</title>
+  <title>Nazif Gürkan Şen | Portfolyo</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; line-height: 1.6; background: #f0f0f0; }
-    header { background: #333; color: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; }
-    header h1 { cursor: pointer; }
-    main { padding: 1rem; text-align: center; }
-    img { width: 150px; height: 150px; border-radius: 50%; margin: 1rem auto; display: block; }
-    a.button { display: inline-block; padding: 0.5rem 1rem; margin: 0.5rem; background: #333; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
-    a.button:hover { background: #555; }
-    footer { background: #222; color: #fff; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; }
-    .about-section {
-  background: #111;
-  color: #fff;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: white;
+      color: black;
+      transition: background 0.3s, color 0.3s;
+    }
 
-.about-section h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
+    body.dark {
+      background: #121212;
+      color: #f0f0f0;
+    }
 
-.about-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
+    header {
+      background: #007acc;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
 
-  </style>.about-section {
-  background: #111;
-  color: #fff;
-  padding: 1rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-}
+    header h1 {
+      margin: 0;
+      cursor: pointer;
+    }
 
-.about-section h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-}
+    .button {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 8px 15px;
+      background: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
 
-.about-section p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
+    main, section {
+      padding: 20px;
+    }
 
+    #profile {
+      display: none;
+      text-align: center;
+    }
+
+    #profile img {
+      max-width: 150px;
+      border-radius: 50%;
+    }
+
+    .project-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    /* Mobil uyum */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 18px;
+      }
+      .button {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #444;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+
+  <button class="theme-toggle" onclick="toggleTheme()">Tema</button>
+
   <header>
     <h1 onclick="toggleProfile()">Nazif Gürkan Şen</h1>
   </header>
-  <main id="profile" style="display: none;">
-    <img src="profil.jpg" alt="Nazif Gürkan Şen">
-    <a class="button" href="https://instagram.com/nazifgürkanşen" target="_blank">Instagram</a>
-    <a class="button" href="mailto:snazifgurkan@gmail.com">Mail Gönder</a>
-  </main><section id="about" class="about-section">
-  <h2>Hakkımda</h2>
-  <p>
-    Merhaba, ben Nazif Gürkan Şen. Yazılım geliştirmeye ilgi duyuyorum ve web geliştirme alanında kendimi geliştiriyorum. Bu portfolyo sitesi aracılığıyla çalışmalarımı ve yeteneklerimi paylaşmayı amaçlıyorum.
-  </p>
-</section>
 
-  <script>
-    function toggleProfile() {
-      var profile = document.getElementById('profile');
-      profile.style.display = profile.style.display === 'none' ? 'block' : 'none';
-    }
-  </script>
-  <footer>
-    &copy; 2025 Nazif Gürkan Şen
-  </footer>
-</body>
-</html>
+  <main id="profile">
+    <img src="profil.jpg" alt="Nazif Gürkan Şen">
+    <br>
+    <a class="button" href="https://instagram.com/">Instagram</a>
+    <a class="button" href="mailto:snazifgurkan@gmail.com">Mail Gönder</a>
+  </main>
+
+  <section id="about" class="about-section">
+    <h2>Hakkımda</h2>
+    <p>Merhaba, ben Nazif Gürkan Şen. Yazılıma ilgi duyuyorum, kendimi geliştiriyor ve projeler üretiyorum.</p>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2>Projelerim</h2>
+    <div class="project-card">
+      <h3>Örnek Proje 1</h3>
+      <p>Bu proje HTML ve CSS kullanılarak yapılmıştır.</p>
+    </div>
+    <div class="project-card">
+      <h3>Örnek Proje 2</h3>
+      <p>JavaScript ile
